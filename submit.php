@@ -23,9 +23,11 @@ if ($action == "complete") {
 	}
 	print_r($newfile);
 	file_put_contents($filename,$newfile);
+	echo("complete");
 } else {
 	$item=$_POST["item"];
 	file_put_contents($filename,$item."|uc\n",FILE_APPEND);
+	echo("add");
 }
 	header("Location: progress.php");
 ?>

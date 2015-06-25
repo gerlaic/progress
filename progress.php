@@ -22,7 +22,7 @@
 	
 	
 	$i=0;
-	$p
+	
 ?>
 		<div id="main">
         
@@ -49,6 +49,7 @@
 				}
 				?>
 				
+				<!--add-->
 				<li>
 					<form action="submit.php" method="post">
 						<input type="hidden" name="action" value="add" />
