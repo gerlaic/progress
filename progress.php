@@ -26,7 +26,39 @@
 ?>
 		<div id="main">
         
-        
+        	
+			<h2>Team TB's To-Do List</h2>
+
+			<ul id="todolist">
+            	<?php
+				foreach ($gTodo as $item) {
+					$listitem=explode("|",$item);
+					if ($listitem[1]=="uc") {
+				?>
+                    <li>
+                        <form action="submit.php" method="post">
+                            <input type="hidden" name="action" value="complete" />
+                            <input type="hidden" name="index" value="<?= $i ?>" />
+                            <input type="submit" value="Complete" />
+                        </form>
+                        <?=$listitem[0]?>
+                    </li>		
+				<?php 
+					}
+					$i++;
+				}
+				?>
+				
+				<!--add-->
+				<li>
+					<form action="submit.php" method="post">
+						<input type="hidden" name="action" value="add" />
+						<input name="item" type="text" size="25" autofocus="autofocus" />
+						<input type="submit" value="Add" />
+					</form>
+				</li>
+			</ul>
+
 			<h2><?=$name?>'s To-Do List</h2>
 
 			<ul id="todolist">
@@ -58,6 +90,23 @@
 					</form>
 				</li>
 			</ul>
+
+			<h2>Team TB has complete these: </h2>
+			<ul id="comList">
+            	<?php
+				foreach ($gTodo as $item) {
+					$listitem=explode("|",$item);
+					if ($listitem[1]=="c") {
+				?>
+                    <li>
+                        <?=$listitem[0]?>
+                    </li>		
+				<?php 
+					}
+				}
+				?>	
+				
+			</ul>
             
             <h2><?=$name?> has competed these: </h2>
             
@@ -74,9 +123,9 @@
 					}
 				}
 				?>
-				
-				
 			</ul>
+			
+
             
             
 
