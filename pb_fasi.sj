@@ -1,2 +1,3 @@
-test1|uc
+test1|c
 test2|c
+test3|uc

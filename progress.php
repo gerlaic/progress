@@ -19,9 +19,10 @@
 	//print($gCount);
 	//print($pCount);
 	
+	$i=array();
+	$i[0]=0;
+	$i[1]=0;
 	
-	
-	$i=0;
 	
 ?>
 		<div id="main">
@@ -37,22 +38,22 @@
 				?>
                     <li>
                         <form action="submit.php" method="post">
-                            <input type="hidden" name="action" value="complete" />
-                            <input type="hidden" name="index" value="<?= $i ?>" />
+                            <input type="hidden" name="action" value="group_complete" />
+                            <input type="hidden" name="index" value="<?= $i[0] ?>" />
                             <input type="submit" value="Complete" />
                         </form>
                         <?=$listitem[0]?>
                     </li>		
 				<?php 
 					}
-					$i++;
+					$i[0]++;
 				}
 				?>
 				
 				<!--add-->
 				<li>
 					<form action="submit.php" method="post">
-						<input type="hidden" name="action" value="add" />
+						<input type="hidden" name="action" value="group_add" />
 						<input name="item" type="text" size="25" autofocus="autofocus" />
 						<input type="submit" value="Add" />
 					</form>
@@ -69,22 +70,22 @@
 				?>
                     <li>
                         <form action="submit.php" method="post">
-                            <input type="hidden" name="action" value="complete" />
-                            <input type="hidden" name="index" value="<?= $i ?>" />
+                            <input type="hidden" name="action" value="person_complete" />
+                            <input type="hidden" name="index" value="<?= $i[1] ?>" />
                             <input type="submit" value="Complete" />
                         </form>
                         <?=$listitem[0]?>
                     </li>		
 				<?php 
 					}
-					$i++;
+					$i[1]++;
 				}
 				?>
 				
 				<!--add-->
 				<li>
 					<form action="submit.php" method="post">
-						<input type="hidden" name="action" value="add" />
+						<input type="hidden" name="action" value="person_add" />
 						<input name="item" type="text" size="25" autofocus="autofocus" />
 						<input type="submit" value="Add" />
 					</form>
