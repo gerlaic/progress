@@ -13,7 +13,7 @@ function top(){?>
 	<body>
 		<div class="headfoot">
 			<h1>
-				<img src="logo.jpg" alt="logo" />
+				<a href="index.php"><img src="logo.jpg" alt="logo" /></a>
 				Doubi<br />Chuunibyou Studio
 			</h1>
 		</div>	
